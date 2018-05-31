@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inserta Asignación</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <form action="#" th:action="@{/menu/insertaDesarrollador}" th:object="${desa}" method="post">
+            <p>Ingresa el número de desarrollador: <input type="number" th:field="*{desarrolladorId}"/></p>
+            <p th:if="${#fields.hasErrors('desarrolladorId')}" th:errors="*{desarrolladorId}">La opción tiene errores</p>
+            <p>Ingresa el número de empleado: <input type="number" th:field="*{numEmpleado}"/></p>
+            <p th:if="${#fields.hasErrors('numEmpleado')}" th:errors="*{numEmpleado}">La opción tiene errores</p>
+            <p>Ingresa el nombre: <input type="text" th:field="*{nombre}"/></p>
+            <p th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">La opción tiene errores</p>
+            <p>Ingresa el apellido paterno: <input type="text" th:field="*{apPaterno}"/></p>
+            <p th:if="${#fields.hasErrors('apPaterno')}" th:errors="*{apPaterno}">La opción tiene errores</p>
+            <p>Ingresa el apellido materno: <input type="text" th:field="*{apMaterno}"/></p>
+            <p th:if="${#fields.hasErrors('apMaterno')}" th:errors="*{apMaterno}">La opción tiene errores</p>
+            <p><input type="submit" value="Aceptar"/></p>
+        </form>
+    </body>
+</html>

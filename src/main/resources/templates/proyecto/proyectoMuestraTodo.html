@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Muestra Datos Proyecto</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <font face="Comic Sans MS,arial,verdana" size=4>
+    <body style="color:rgb(125, 206, 160);">
+        <div style="text-align:center;">
+            <br>
+            <br>
+            <br>
+            <table border="1" style="margin: 0 auto;">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Fecha inicial</th>
+                        <th>Fecha final</th>
+                    </tr>
+                </thead>
+                <tbody th:each="ProyectoDTO : ${proyecto}">
+                    <tr>
+                        <th th:text="${ProyectoDTO.proyectoId}"></th>
+                        <th th:text="${ProyectoDTO.nombreProyecto}"></th>
+                        <th th:text="${ProyectoDTO.descripcion}"></th>
+                        <th th:text="${ProyectoDTO.fechaInicio}"></th>
+                        <th th:text="${ProyectoDTO.fechaFin}"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <br>
+        <p>Para regresar al menú da clic <a href="/menu/">aquí</a></p>
+    </body>
+</html>

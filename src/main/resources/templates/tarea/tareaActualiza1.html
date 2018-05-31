@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inserta Asignación</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p>Los datos actuales del registro son los siguientes</p>
+        <br>
+        <p>TareaID = <span th:text="${tarea.tareaId}"></span></p>
+        <p>Nombre = <span th:text="${tarea.nombreTarea}"></span></p>
+        <p>Descripción = <span th:text="${tarea.descripcion}"></span></p>
+        <p>ProyectoID = <span th:text="${tarea.proyectoId}"></span></p>
+        <br>
+        <br>
+        <form action="#" th:action="@{/menu/actualizaTarea1}" th:object="${tarea1}" method="post">
+            <p>Ingresa el nuevo nombre de la tarea (Si no quieres cambiarlo puedes poner el mismo): 
+                <input type="text" th:field="*{nombreTarea}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('nombreTarea')}" th:errors="*{nombreTarea}">La opción tiene errores</p>
+            <p>Ingresa la nueva descripción del proyecto (Si no quieres cambiarla puedes poner la misma): 
+                <input type="text" th:field="*{descripcion}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}">La opción tiene errores</p>
+            <p>Ingresa el nuevo número de proyecto al que estará asociada (Si no quieres cambiarlo puedes poner el mismo):
+                <input type="text" th:field="*{proyectoId}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('proyectoId')}" th:errors="*{proyectoId}">La opción tiene errores</p>
+            <p><input type="submit" value="Aceptar"/></p>
+        </form>
+    </body>
+</html>

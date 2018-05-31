@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Menú tabla Asignación</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p>Ingresa el ID del registro que quieres consultar</p>
+        <form action="#" th:action="@{/menu/proyectoMuestraId}" th:object="${eleccion1}" method="post">
+            <p>Elegir opcion: <input type="number" th:field="*{opcion}"/></p>
+            <p th:if="${#fields.hasErrors('opcion')}" th:errors="*{opcion}">La opción tiene errores</p>
+            <p><input type="submit" value="Aceptar"/></p>
+        </form>
+    </body>
+</html>

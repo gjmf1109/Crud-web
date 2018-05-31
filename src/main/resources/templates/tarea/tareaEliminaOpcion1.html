@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Eliminar Tabla Asignacion</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p>1.- Eliminar todos los registros de la tabla</p>
+        <p>2.- Eliminar por número de tarea</p>
+        <form action="#" th:action="@{/menu/tareaEliminaTodo}" th:object="${eleccion}" method="post">
+            <p>Elegir opcion: <input type="number" th:field="*{opcion}"/></p>
+            <p th:if="${#fields.hasErrors('opcion')}" th:errors="*{opcion}">La opción tiene errores</p>
+            <p><input type="submit" value="Aceptar"/></p>
+        </form>
+    </body>
+</html>

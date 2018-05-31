@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Menu del Crud</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p>¿Sobre qué tabla quieres operar en la base de datos?</p>
+        <p>1.- Asignacion_Desarrollo_Tarea</p>
+        <p>2.- Tarea</p>
+        <p>3.- Desarrollador</p>
+        <p>4.- Proyecto</p>
+        <p>5.- Salir</p>
+        <form action="#" th:action="@{/menu/opcionElegida}" th:object="${eleccion}" method="post">
+            <p>Elegir opcion: <input type="number" th:field="*{opcion}"/></p>
+            <p th:if="${#fields.hasErrors('opcion')}" th:errors="*{opcion}">La opción tiene errores</p>
+            <p><input type="submit" value="Aceptar"/></p>
+        </form>
+    </body>
+</html>

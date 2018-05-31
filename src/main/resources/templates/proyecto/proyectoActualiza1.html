@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inserta Asignación</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p>Los datos actuales del registro son los siguientes</p>
+        <br>
+        <p>ProyectoId = <span th:text="${proyecto.proyectoId}"></span></p>
+        <p>Nombre = <span th:text="${proyecto.nombreProyecto}"></span></p>
+        <p>Descripción = <span th:text="${proyecto.descripcion}"></span></p>
+        <p>Fecha inicial = <span th:text="${proyecto.fechaInicio}"></span></p>
+        <p>Fecha final = <span th:text="${proyecto.fechaFin}"></span></p>
+        <br>
+        <br>
+        <form action="#" th:action="@{/menu/actualizaProyecto1}" th:object="${proyecto1}" method="post">
+            <p>Ingresa el nuevo nombre del proyecto (Si no quieres cambiarlo puedes introducir el mismo): 
+                <input type="text" th:field="*{nombreProyecto}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('nombreProyecto')}" th:errors="*{nombreProyecto}">La opción tiene errores</p>
+            <p>Ingresa la descripción del proyecto (Si no quieres cambiarlo puedes introducir el mismo): 
+                <input type="text" th:field="*{descripcion}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}">La opción tiene errores</p>
+            <p>Ingresa la nueva fecha inicio del proyecto (yyyy-mm-dd, Si no quieres cambiarla puedes introducir la misma): 
+                <input type="text" th:field="*{fechaInicio}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('fechaInicio')}" th:errors="*{fechaInicio}">La opción tiene errores</p>
+            <p>Ingresa la nueva fecha fin del proyecto (yyyy-mm-dd, Si no quieres cambiarla puedes introducir la misma): 
+                <input type="text" th:field="*{fechaFin}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('fechaFin')}" th:errors="*{fechaFin}">La opción tiene errores</p>
+            <p><input type="submit" value="Aceptar"/></p>
+        </form>
+    </body>
+</html>

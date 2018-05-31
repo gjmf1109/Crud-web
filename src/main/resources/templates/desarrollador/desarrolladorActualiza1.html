@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Actualiza Desarrollador</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p>Los datos actuales del registro son los siguientes</p>
+        <br>
+        <p>DesarrolladorId = <span th:text="${desarrollador.desarrolladorId}"></span></p>
+        <p>Número de empleado = <span th:text="${desarrollador.numEmpleado}"></span></p>
+        <p>Nombre = <span th:text="${desarrollador.nombre}"></span></p>
+        <p>Apellido Paterno = <span th:text="${desarrollador.apPaterno}"></span></p>
+        <p>Apellido Paterno = <span th:text="${desarrollador.apMaterno}"></span></p>
+        <br>
+        <br>
+        <form action="#" th:action="@{/menu/actualizaDesarrollador1}" th:object="${desa1}" method="post">
+            <p>Ingresa el nuevo número de empleado (Puedes ingresar el mismo si no quieres cambiarlo): 
+                <input type="number" th:field="*{numEmpleado}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('numEmpleado')}" th:errors="*{numEmpleado}">La opción tiene errores</p>
+            <p>Ingresa el nuevo nombre (Puedes ingresar el mismo si no quieres cambiarlo): 
+                <input type="text" th:field="*{nombre}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">La opción tiene errores</p>
+            <p>Ingresa el  nuevo apellido paterno (Puedes ingresar el mismo si no quieres cambiarlo):
+                <input type="text" th:field="*{apPaterno}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('apPaterno')}" th:errors="*{apPaterno}">La opción tiene errores</p>
+            <p>Ingresa el nuevo apellido materno (Puedes ingresar el mismo si no quieres cambiarlo):
+                <input type="text" th:field="*{apMaterno}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('apMaterno')}" th:errors="*{apMaterno}">La opción tiene errores</p>
+            <p><input type="submit" value="Aceptar"/></p>
+        </form>
+    </body>
+</html>

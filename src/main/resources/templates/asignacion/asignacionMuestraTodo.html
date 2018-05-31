@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Muestra Tabla Asignación</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <table>
+            <tbody th:each="AsignacionDTO : ${asignacion}">
+                <tr>
+                    <th th:text="${AsignacionDTO.asignacionId}"></th>
+                    <th th:text="${AsignacionDTO.desarrolladorId}"></th>
+                    <th th:text="${AsignacionDTO.tareaId}"></th>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

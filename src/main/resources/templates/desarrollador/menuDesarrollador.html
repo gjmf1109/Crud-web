@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Menú Tabla Asignación</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p>¿Qué quieres realizar en la tabla de la base de datos?</p>
+        <p>1.- Consultar a la tabla</p>
+        <p>2.- Insertar un desarrollador a la tabla</p>
+        <p>3.- Actualizar los datos de un desarrollador</p>
+        <p>4.- Eliminar a un desarrollador de la tabla</p>
+        <p>5.- Salir</p>
+        <form action="#" th:action="@{/menu/opcionElegidaDesarrollador}" th:object="${eleccion}" method="post">
+            <p>Elegir opcion: <input type="number" th:field="*{opcion}"/></p>
+            <p th:if="${#fields.hasErrors('opcion')}" th:errors="*{opcion}">La opción tiene errores</p>
+            <p><input type="submit" value="Aceptar"/></p>
+        </form>
+
+    </body>
+</html>

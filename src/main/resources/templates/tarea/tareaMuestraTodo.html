@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Muestra Datos Proyecto</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <table>
+            <tbody th:each="TareaDTO : ${tarea}">
+                <tr>
+                    <th th:text="${TareaDTO.tareaId}"></th>
+                    <th th:text="${TareaDTO.nombreTarea}"></th>
+                    <th th:text="${TareaDTO.descripcion}"></th>
+                    <th th:text="${TareaDTO.proyectoId}"></th>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

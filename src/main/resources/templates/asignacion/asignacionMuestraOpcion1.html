@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Consultar tabla Proyecto</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p>1.- Retornar todos los registros de la tabla</p>
+        <p>2.- Buscar por número de proyecto</p>
+        <form action="#" th:action="@{/menu/asignacionMuestraTodo}" th:object="${eleccion}" method="post">
+            <p>Elegir opcion: <input type="number" th:field="*{opcion}"/></p>
+            <p th:if="${#fields.hasErrors('opcion')}" th:errors="*{opcion}">La opción tiene errores</p>
+            <p><input type="submit" value="Aceptar"/></p>
+        </form>
+    </body>
+</html>

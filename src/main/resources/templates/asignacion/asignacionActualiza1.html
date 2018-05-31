@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inserta Asignación</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p>Los datos actuales del registro son los siguientes</p>
+        <br>
+        <p>Número de asignación = <span th:text="${asignacion.asignacionId}"></span></p>
+        <p>Número de desarrollador = <span th:text="${asignacion.desarrolladorId}"></span></p>
+        <p>Número de tarea = <span th:text="${asignacion.tareaId}"></span></p>
+        <br>
+        <br>
+        <form action="#" th:action="@{/menu/actualizaAsignacion1}" th:object="${asignacion1}" method="post">
+            <p>Ingresa el nuevo número de desarrollador (si no quieres cambiarlo puedes introducir el mismo): 
+                <input type="number" th:field="*{desarrolladorId}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('desarrolladorId')}" th:errors="*{desarrolladorId}">La opción tiene errores</p>
+            <p>Ingresa el nuevo número de tarea (si no quieres cambiarlo puedes introducir el mismo):  
+                <input type="number" th:field="*{tareaId}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('tareaId')}" th:errors="*{tareaId}">La opción tiene errores</p>
+            <p><input type="submit" value="Aceptar"/></p>
+        </form>
+    </body>
+</html>

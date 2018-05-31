@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Muestra Datos Proyecto</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <table>
+            <tbody th:each="DesarrolladorDTO : ${desarrollador}">
+                <tr>
+                    <th th:text="${DesarrolladorDTO.desarrolladorId}"></th>
+                    <th th:text="${DesarrolladorDTO.numEmpleado}"></th>
+                    <th th:text="${DesarrolladorDTO.nombre}"></th>
+                    <th th:text="${DesarrolladorDTO.apPaterno}"></th>
+                    <th th:text="${DesarrolladorDTO.apMaterno}"></th>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
